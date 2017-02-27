@@ -10,18 +10,18 @@
 			
 			<div class="form-group" style="margin-bottom: 0px;">
 				<i class="fa fa-user fa-lg"></i> 
-				<input type="text" class="form-control" ng-model="username" name="username" ng-minlength="6"
+				<input type="text" class="form-control" ng-model="user.name" name="username" ng-minlength="6"
 						placeholder="请输入账户名" required autofocus>
 			</div>
 			
 			<div class="form-group">
 					
 				<i class="fa fa-lock fa-lg"></i> 
-				<input type="password" class="form-control" ng-model="password" name="password" ng-minlength="8"
+				<input type="password" class="form-control" ng-model="user.password" name="password" ng-minlength="8"
 						placeholder="请输入密码" ng-disabled="myForm.username.$invalid" required>
 						
 				<i class="fa fa-check fa-lg"></i> 
-				<input type="password" class="form-control" ng-model="password2" name="password2"
+				<input type="password" class="form-control" ng-model="user.password2" name="password2"
 						placeholder="请再次输入密码" ng-disabled="myForm.username.$invalid || myForm.password.$invalid" ng-blur="validatePassword()" required>
 				
 				<div class="tip" style="margin-top:5px"
@@ -33,12 +33,13 @@
 			</div>
 			
 			<div class="form-group">
-				<input type="checkbox" value="remember-me" required> <span class="text" style="font-size: 13px;color: #7B7B7B;">已阅读用户协议</span>
+				<input name="remeberMe" ng-model="remeberMe" type="checkbox" ng-required="remeberMe"> <span class="text" style="font-size: 13px;color: #7B7B7B;">已阅读用户协议</span>
 			</div>
 			
 			<div class="form-group">
-				<button type="submit" class="btn btn-block btn-primary" ng-disabled='myForm.$invalid||!validUsername||!validPassword||password != password2'
-					id="register_btn" ng-click="">注册</button>
+				<button type="submit" class="btn btn-block btn-primary" ng-disabled='myForm.$invalid||!validUsername||
+					!validPassword||password != password2'
+					id="register_btn" ng-click="register()">注册</button>
 				<a href="#login" class="btn btn-default btn-block">登陆</a>
 			</div>
 		</form>

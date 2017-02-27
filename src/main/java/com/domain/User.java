@@ -1,26 +1,21 @@
 package com.domain;
 
 public class User {
-	private int id;
-	private String userName;
-	private String passWord;
+	private String name;
+	private String password;
 	
-	public int getId() {
-		return id;
+	public String getName() {
+		return name;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setName(String name) {
+		this.name = name;
 	}
-	public String getUserName() {
-		return userName;
+	
+	public String getPassword() {
+		return password;
 	}
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setPassword(String password) {
+		this.password = password;
 	}
-	public String getPassWord() {
-		return passWord;
-	}
-	public void setPassWord(String passWord) {
-		this.passWord = passWord;
-	}
+	
 }

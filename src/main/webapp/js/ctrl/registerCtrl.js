@@ -9,14 +9,27 @@ app.controller('registerCtrl', ['$rootScope', '$scope', '$resource', '$location'
 	}, 1000);
 	
 	$scope.validatePassword = function() {
-		var pass1 = $scope.password;
-		var pass2 = $scope.password2;
+		var pass1 = $scope.user.password;
+		var pass2 = $scope.user.password2;
 		
 		if(pass1 == pass2){
 			$scope.validPassword = true;
 		} else {
 			$scope.validPassword = false;
-			$scope.password2 = '';
+			$scope.user.password2 = '';
 		}
 	};
+	
+	$scope.register = function() {
+		var registerUser = $resource('user/register.do', {}, {add:{method:'POST',responseType:"application/json;charset=UTF-8"}});
+		registerUser.save({}, $scope.user, function(res){
+			alert("signup success");
+			var user = res.data;
+            $rootScope.user.name = user.name;
+			$location.path("/login");
+		}, function (error) {
+			alert("signup faliure");
+		});
+	};
+	
 }]);
