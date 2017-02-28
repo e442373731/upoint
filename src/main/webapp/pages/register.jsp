@@ -33,11 +33,11 @@
 			</div>
 			
 			<div class="form-group">
-				<input name="remeberMe" ng-model="remeberMe" type="checkbox" ng-required="remeberMe"> <span class="text" style="font-size: 13px;color: #7B7B7B;">已阅读用户协议</span>
+				<input name="remeberMe" ng-model="remeberMe" type="checkbox" required> <span class="text" style="font-size: 13px;color: #7B7B7B;">已阅读用户协议</span>
 			</div>
 			
 			<div class="form-group">
-				<button type="submit" class="btn btn-block btn-primary" ng-disabled='myForm.$invalid||!validUsername||
+				<button type="submit" class="btn btn-block btn-primary" ng-disabled='myForm.$invalid||!validUsername||remeberMe!=true||
 					!validPassword||password != password2'
 					id="register_btn" ng-click="register()">注册</button>
 				<a href="#login" class="btn btn-default btn-block">登陆</a>

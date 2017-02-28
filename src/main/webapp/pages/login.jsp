@@ -12,10 +12,10 @@
 
 			<div class="form-group">
 				<i class="fa fa-user fa-lg"></i>
-				<input type="text" class="form-control" placeholder="请输入账户名" ng-model="userName" required autofocus>
+				<input type="text" class="form-control" placeholder="请输入账户名" ng-model="user.name" required autofocus>
 				
 				<i class="fa fa-lock fa-lg"></i>
-				<input type="password" class="form-control" placeholder="请输入密码" ng-model="myPassword" required>
+				<input type="password" class="form-control" placeholder="请输入密码" ng-model="user.password" required>
 			</div>
 
 			<div class="form-group">
