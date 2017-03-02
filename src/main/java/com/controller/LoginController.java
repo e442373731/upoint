@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.domain.User;
+import com.service.UserService;
 import com.service.impl.UserServiceImpl;
 import com.util.ResponseData;
 
@@ -16,12 +17,12 @@ import com.util.ResponseData;
 public class LoginController {
 	
 	@Autowired
-	private UserServiceImpl userServiceImpl;
+	private UserService userService;
 
 	@ResponseBody
 	@RequestMapping(value="/register", method=RequestMethod.POST)
 	public ResponseData register(@RequestBody User user){
-		userServiceImpl.registerUser(user);
+		userService.registerUser(user);
 		return new ResponseData(user);
 	}
 
