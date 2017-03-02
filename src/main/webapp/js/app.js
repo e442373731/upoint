@@ -14,10 +14,6 @@ app.config(['$routeProvider',function ($routeProvider) {
 		templateUrl:'pages/register.jsp',
 		controller:'registerCtrl'
 	})
-	/*.when('/home',{
-		templateUrl:'dashboard/home.html',
-		controller:'homeCtrl'
-	})*/
 	.otherwise({redirectTo:'/login'
 	});
 	

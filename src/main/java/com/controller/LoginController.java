@@ -16,7 +16,7 @@ public class LoginController {
 	@ResponseBody
 	@RequestMapping(value="/register", method=RequestMethod.POST)
 	public ResponseData register(@RequestBody User user){
-		System.out.println(user.getName());
+		System.out.println("zhuce");
 		return new ResponseData(user);
 	}
 
