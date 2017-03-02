@@ -12,4 +12,6 @@ public interface UserService {
 	 * @return
 	 */
 	User findUserByUserName(String username);
+	
+	int registerUser(User user);
 }
