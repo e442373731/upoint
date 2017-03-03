@@ -6,12 +6,12 @@ public interface UserService {
 
 	/**
 	 * 
-	 * 通过ID获取用户信息
+	 * 通锟斤拷ID锟斤拷取锟矫伙拷锟斤拷息
 	 * 
 	 * @param id
 	 * @return
 	 */
 	User findUserByUserName(String username);
 	
-	int registerUser(User user);
+	void registerUser(User user);
 }

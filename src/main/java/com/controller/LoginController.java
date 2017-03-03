@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.domain.User;
 import com.service.UserService;
-import com.service.impl.UserServiceImpl;
 import com.util.ResponseData;
 
 @RestController
