@@ -12,7 +12,7 @@ import com.service.UserService;
 @Service
 public class UserServiceImpl implements UserService {
 
-	private Logger logger = LoggerFactory.getLogger(this.getClass());
+	private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
 	
 	@Autowired
 	private UserDao userDao;
@@ -24,8 +24,8 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	@Override
-	public int registerUser(User user){
-		logger.info("start register {}!", user.getUserName());
-		return userDao.insertUserByinfo(user);
+	public void registerUser(User user){
+		logger.info("start register {}!", user.getUsername());
+		userDao.insertUserByinfo(user);
 	}
 }

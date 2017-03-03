@@ -24,7 +24,7 @@
 			username = #{username}
 	</select>
 	
-	<insert id="insertUserByinfo" resultType="int" parameterType="com.domain.User">
+	<insert id="insertUserByinfo" parameterType="com.domain.User">
 		INSERT INTO 
 			user
 				(userId,username,password,credits,lastIp,lastVisit) 

@@ -25,7 +25,7 @@ app.controller('registerCtrl', ['$rootScope', '$scope', '$resource', '$location'
 		registerUser.save({}, $scope.user, function(res){
 			alert("signup success");
 			var user = res.data;
-            $rootScope.user.name = user.name;
+            $rootScope.user.username = user.username;
 			$location.path("/login");
 		}, function (error) {
 			alert("signup faliure");

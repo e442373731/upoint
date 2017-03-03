@@ -10,7 +10,7 @@
 			
 			<div class="form-group" style="margin-bottom: 0px;">
 				<i class="fa fa-user fa-lg"></i> 
-				<input type="text" class="form-control" ng-model="user.name" name="username" ng-minlength="6"
+				<input type="text" class="form-control" ng-model="user.username" name="username" ng-minlength="6"
 						placeholder="请输入账户名" required autofocus>
 			</div>
 			

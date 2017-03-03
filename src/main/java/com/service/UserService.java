@@ -13,5 +13,5 @@ public interface UserService {
 	 */
 	User findUserByUserName(String username);
 	
-	int registerUser(User user);
+	void registerUser(User user);
 }
