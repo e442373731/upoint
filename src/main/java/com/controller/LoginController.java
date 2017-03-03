@@ -3,6 +3,7 @@ package com.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -27,6 +28,13 @@ public class LoginController {
 	public ResponseData register(@RequestBody User user){
 		logger.info("get username = {}", user.getUsername());
 		userServiceImpl.registerUser(user);
+		return new ResponseData(user);
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="/{username}",method=RequestMethod.GET)
+	public ResponseData validateName(@PathVariable("username") String username){
+		User user = userServiceImpl.findUserByUserName(username);
 		return new ResponseData(user);
 	}
 

@@ -11,14 +11,14 @@
 			<div class="form-group" style="margin-bottom: 0px;">
 				<i class="fa fa-user fa-lg"></i> 
 				<input type="text" class="form-control" ng-model="user.username" name="username" ng-minlength="6"
-						placeholder="请输入账户名" required autofocus>
+						placeholder="请输入账户名" ng-blur="validateUsername()" required autofocus>
 			</div>
 			
 			<div class="form-group">
 					
 				<i class="fa fa-lock fa-lg"></i> 
 				<input type="password" class="form-control" ng-model="user.password" name="password" ng-minlength="8"
-						placeholder="请输入密码" ng-disabled="myForm.username.$invalid" required>
+						placeholder="请输入密码" ng-disabled="myForm.username.$invalid || !validUsername" required>
 						
 				<i class="fa fa-check fa-lg"></i> 
 				<input type="password" class="form-control" ng-model="user.password2" name="password2"
@@ -30,6 +30,8 @@
 						ng-show="myForm.password.$error.minlength"><span class="text" style="font-size: 13px;color: red;">密码最少8位</div>
 				<div class="tip" style="margin-top:5px"
 						ng-show="!validPassword"><span class="text" style="font-size: 13px;color: red;">两次输入的密码不一致</div>
+				<div class="tip" style="margin-top:5px"
+						ng-show="!validUsername"><span class="text" style="font-size: 13px;color: red;">用户名已存在</div>
 			</div>
 			
 			<div class="form-group">

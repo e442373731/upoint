@@ -1,4 +1,7 @@
 app.controller('registerCtrl', ['$rootScope', '$scope', '$resource', '$location', '$interval', function($rootScope, $scope, $resource, $location, $interval){
+	$scope.user.username = "";
+	$scope.user.password = "";
+	$scope.user.password2 = "";
 	
 	$scope.validUsername = true;
 	
@@ -20,12 +23,26 @@ app.controller('registerCtrl', ['$rootScope', '$scope', '$resource', '$location'
 		}
 	};
 	
+	$scope.validateUsername = function() {
+		var userResource = $resource('user/:username',{username:$scope.user.username},{query:{method:'get',isArray:false}});
+		if($scope.user.username != undefined){
+			userResource.query({username:$scope.user.username},function(res){
+				if(res.data != null){
+					$scope.validUsername = false;
+				}else{
+					$scope.validUsername = true;
+				}
+			});
+		}else{
+			$scope.validUsername = false;
+		}
+	};
+	
 	$scope.register = function() {
-		var registerUser = $resource('user/register.do', {}, {add:{method:'POST',responseType:"application/json;charset=UTF-8"}});
+		var registerUser = $resource('user/register', {}, {add:{method:'POST',responseType:"application/json;charset=UTF-8"}});
 		registerUser.save({}, $scope.user, function(res){
 			alert("signup success");
 			var user = res.data;
-            $rootScope.user.username = user.username;
 			$location.path("/login");
 		}, function (error) {
 			alert("signup faliure");
