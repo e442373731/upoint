@@ -26,7 +26,7 @@ public class LoginController {
 	@ResponseBody
 	@RequestMapping(value="/register", method=RequestMethod.POST)
 	public ResponseData register(@RequestBody User user){
-		logger.info("get username = {}", user.getUsername());
+		logger.info("get username = {} form page!", user.getUsername());
 		userServiceImpl.registerUser(user);
 		return new ResponseData(user);
 	}
