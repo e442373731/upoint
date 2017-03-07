@@ -47,7 +47,7 @@ app.controller('registerCtrl', ['$rootScope', '$scope', '$resource', '$location'
 		var registerUser = $resource('user/register', {}, {add:{method:'POST',responseType:"application/json;charset=UTF-8"}});
 		registerUser.save({}, $scope.user, function(res){
 			alert("signup success");
-			var user = res.data;
+			$rootScope.user.username = res.data.username;
 			$location.path("/registerSuccess");
 		}, function (error) {
 			alert("signup faliure");

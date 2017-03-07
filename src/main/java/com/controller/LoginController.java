@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.domain.User;
-import com.service.impl.UserServiceImpl;
+import com.service.UserService;
 import com.util.ResponseData;
 
 @RestController
@@ -21,7 +21,7 @@ public class LoginController {
 	private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 	
 	@Autowired
-	private UserServiceImpl userServiceImpl;
+	private UserService userServiceImpl;
 
 	@ResponseBody
 	@RequestMapping(value="/register", method=RequestMethod.POST)
