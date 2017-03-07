@@ -31,7 +31,7 @@
 				<div class="tip" style="margin-top:5px"
 						ng-show="!validPassword"><span class="text" style="font-size: 13px;color: red;">两次输入的密码不一致</div>
 				<div class="tip" style="margin-top:5px"
-						ng-show="!validUsername"><span class="text" style="font-size: 13px;color: red;">用户名已存在</div>
+						ng-show="!validUsername"><span class="text" style="font-size: 13px;color: red;">用户名不合法或者已存在</div>
 			</div>
 			
 			<div class="form-group">

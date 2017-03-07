@@ -34,7 +34,14 @@ public class LoginController {
 	@ResponseBody
 	@RequestMapping(value="/{username}",method=RequestMethod.GET)
 	public ResponseData validateName(@PathVariable("username") String username){
+		logger.info("start to validate username:{}!", username);
 		User user = userServiceImpl.findUserByUserName(username);
+		if(user == null){
+			logger.info("the username is valid!");
+		} else {
+			logger.info("error! the username is not valid!");
+		}
+		
 		return new ResponseData(user);
 	}
 

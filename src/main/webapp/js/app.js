@@ -14,6 +14,10 @@ app.config(['$routeProvider',function ($routeProvider) {
 		templateUrl:'pages/register.jsp',
 		controller:'registerCtrl'
 	})
+	.when('/registerSuccess',{
+		templateUrl:'pages/registerSuccess.jsp',
+		controller:'rSuccessCtrl'
+	})
 	.otherwise({redirectTo:'/login'
 	});
 	

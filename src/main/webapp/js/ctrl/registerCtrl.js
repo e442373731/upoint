@@ -26,15 +26,20 @@ app.controller('registerCtrl', ['$rootScope', '$scope', '$resource', '$location'
 	$scope.validateUsername = function() {
 		var userResource = $resource('user/:username',{username:$scope.user.username},{query:{method:'get',isArray:false}});
 		if($scope.user.username != undefined){
-			userResource.query({username:$scope.user.username},function(res){
-				if(res.data != null){
-					$scope.validUsername = false;
-				}else{
-					$scope.validUsername = true;
-				}
-			});
+			if($scope.user.username.indexOf(".") > 0){
+				$scope.validUsername = false;
+			} else {
+				userResource.query({username:$scope.user.username},function(res){
+					if(res.data != null){
+						$scope.validUsername = false;
+					}else{
+						$scope.validUsername = true;
+					}
+				});
+			}
+			
 		}else{
-			$scope.validUsername = false;
+			$scope.validUsername = true;
 		}
 	};
 	
@@ -43,7 +48,7 @@ app.controller('registerCtrl', ['$rootScope', '$scope', '$resource', '$location'
 		registerUser.save({}, $scope.user, function(res){
 			alert("signup success");
 			var user = res.data;
-			$location.path("/login");
+			$location.path("/registerSuccess");
 		}, function (error) {
 			alert("signup faliure");
 		});

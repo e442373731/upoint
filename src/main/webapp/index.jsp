@@ -5,11 +5,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>欢迎您</title>
-
 <link href="resources/css/font-awesome.min.css" rel="stylesheet">
 <link href="resources/css/login.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
-
 </head>
 
 <body ng-app="app">
@@ -30,5 +28,6 @@
 	<script src="js/app.js"></script>
 	<script src="js/ctrl/loginCtrl.js"></script>
 	<script src="js/ctrl/registerCtrl.js"></script>
+	<script src="js/ctrl/rSuccessCtrl.js"></script>
 </body>
 </html>
