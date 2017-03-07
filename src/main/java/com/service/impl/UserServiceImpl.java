@@ -28,4 +28,20 @@ public class UserServiceImpl implements UserService {
 		logger.info("start register {}!", user.getUsername());
 		userDao.insertUserByinfo(user);
 	}
+	
+	@Override
+	public boolean loginValid(User user){
+		User tmpuser = findUserByUserName(user.getUsername());
+		if(tmpuser == null){
+			logger.error("the user is not exist!!");
+			return false;
+		} else {
+			if(!tmpuser.getPassword().equals(user.getPassword())){
+				logger.error("the password is not right!!");
+				return false;
+			}
+		}
+		logger.info("login success!!");
+		return true;
+	}
 }

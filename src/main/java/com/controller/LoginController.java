@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.domain.User;
@@ -23,7 +22,6 @@ public class LoginController {
 	@Autowired
 	private UserService userServiceImpl;
 
-	@ResponseBody
 	@RequestMapping(value="/register", method=RequestMethod.POST)
 	public ResponseData register(@RequestBody User user){
 		logger.info("get username = {} form page!", user.getUsername());
@@ -31,7 +29,6 @@ public class LoginController {
 		return new ResponseData(user);
 	}
 	
-	@ResponseBody
 	@RequestMapping(value="/{username}",method=RequestMethod.GET)
 	public ResponseData validateName(@PathVariable("username") String username){
 		logger.info("start to validate username:{}!", username);
@@ -45,8 +42,10 @@ public class LoginController {
 		return new ResponseData(user);
 	}
 
-	@RequestMapping("login")
-	public String login() {
-		return "";
+	@RequestMapping(value="/login", method=RequestMethod.POST)
+	public ResponseData login(@RequestBody User user) {
+		logger.info("start to login with username={}", user.getUsername());
+		boolean loginWithName = userServiceImpl.loginValid(user);
+		return new ResponseData(loginWithName);
 	}
 } 

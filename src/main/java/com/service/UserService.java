@@ -14,4 +14,6 @@ public interface UserService {
 	User findUserByUserName(String username);
 	
 	void registerUser(User user);
+	
+	boolean loginValid(User user);
 }

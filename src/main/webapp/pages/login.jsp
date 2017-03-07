@@ -24,7 +24,7 @@
 			</div>
 
 			<div class="form-group">
-				<button class="btn btn-primary btn-block" type="submit" style="margin-top: 15px">登陆</button>
+				<button class="btn btn-primary btn-block" type="submit" style="margin-top: 15px" ng-click="login()" ng-disabled='myForm.$invalid'>登陆</button>
 				<a href="#register" class="btn btn-default btn-block">注册</a>
 			</div>
 		</form>
