@@ -12,14 +12,14 @@
 
 			<div class="form-group">
 				<i class="fa fa-user fa-lg"></i>
-				<input type="text" class="form-control" placeholder="请输入账户名" ng-model="user.username" required autofocus>
+				<input type="text" class="form-control" placeholder="请输入账户名" ng-model="user.username" ng-blur="remeberPw()" required autofocus>
 				
 				<i class="fa fa-lock fa-lg"></i>
 				<input type="password" class="form-control" placeholder="请输入密码" ng-model="user.password" required>
 			</div>
 
 			<div class="form-group">
-				<input type="checkbox" value="remember-me" style="font-size: 13px;"> <span class="text" style="font-size: 13px;color: #7B7B7B;">记住密码</span>
+				<input type="checkbox" value="remember-me" ng-model="remeberMe" style="font-size: 13px;"> <span class="text" style="font-size: 13px;color: #7B7B7B;">记住密码</span>
 				<a href="/upoint/register.jsp" style="font-size: 13px;float: right;margin-top:5px">忘记密码？</a>
 			</div>
 

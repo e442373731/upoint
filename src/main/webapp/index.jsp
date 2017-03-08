@@ -26,6 +26,7 @@
 	
 	<!-- App -->
 	<script src="js/app.js"></script>
+	<script src="js/common.js"></script>
 	<script src="js/ctrl/loginCtrl.js"></script>
 	<script src="js/ctrl/registerCtrl.js"></script>
 	<script src="js/ctrl/rSuccessCtrl.js"></script>

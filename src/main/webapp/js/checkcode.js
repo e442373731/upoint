@@ -10,5 +10,4 @@ window.onload = function createCode() {
 		var index = Math.floor(Math.random() * 36);// 取得随机数的索引（0~35）
 		code += random[index];// 根据索引取得随机数加到code上
 	}
-	$("#checkCode")
 };
