@@ -12,7 +12,7 @@
 
 <body ng-app="app">
 	<div ng-view></div>
-	<div ng-include="'pages/page_footer.html'"></div>
+	<div class="footer-all" ng-include="'pages/page_footer.html'"></div>
 	
 	<!-- Bootstarp -->
 	<script src="https://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>

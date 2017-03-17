@@ -1,7 +1,39 @@
-body {
-	/* background: url(resources/img/4.jpg) no-repeat; */
+/* body {
 	background-size: <span style="font-family: 微软雅黑; background-color: rgb(239, 239, 239);">cover</span>;
 	font-size: 16px;
+} */
+
+.my-container {
+    width: 870px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.footer-all {
+	left: 0;  
+    position: fixed;  
+    bottom: 0;  
+    width: 100%;  
+    z-index: 100;
+    border-top:1px solid #f0f0f0;
+}
+
+.main {
+	padding: 60px 0 66px 0;
+}
+
+.login-banner {
+	vertical-align: middle;
+    padding-right: 20px
+}
+
+.login-group {
+	background: #fefefe;
+    border: 1px solid #eaeaea;
+	padding-left: 20px;
+	float: left;
 }
 
 .form-signin {
@@ -27,8 +59,7 @@ input[type="text"],input[type="password"] {
 }
 
 form {
-	border: 1px solid dodgerblue;
-	box-shadow: 10px 10px 5px #888888;
+	
 }
 
 input {

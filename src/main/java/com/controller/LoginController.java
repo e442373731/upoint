@@ -9,13 +9,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.BaseController;
 import com.domain.User;
 import com.service.UserService;
 import com.util.ResponseData;
 
 @RestController
 @RequestMapping("/user")
-public class LoginController {
+public class LoginController extends BaseController{
 	
 	private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 	
